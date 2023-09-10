@@ -60,7 +60,7 @@ function TransactionForm({ hasChange, setHasChange }) {
               name='category'
                value={formData.category}
                 onChange={handleChange}
-                 placeholder=''/>
+                 placeholder={formData.category}/>
             <input
              type='text'
               name='amount'
