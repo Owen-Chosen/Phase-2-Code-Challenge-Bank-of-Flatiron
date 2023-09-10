@@ -1,10 +1,23 @@
 import React, { useState } from 'react'
 import Transaction from './Transaction'
 
-function DisplayTransactions({transactions}) {
+function DisplayTransactions({transactions, hasChange, setHasChange}) {
 
-  console.log(transactions)
-    
+  let count = 1;
+
+  function handleDelete (event) {
+    const id = event.target.id;
+    fetch (`http://localhost:3000/transactions/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        }
+    }).then(res => res.json()).then(data => {
+      setHasChange(() => !hasChange)
+    })
+
+}    
   return (
     <div>
       <table>
@@ -19,7 +32,10 @@ function DisplayTransactions({transactions}) {
         </thead>
         <tbody>
           {transactions.map((transaction) => {
-            return <Transaction key={transaction.id} transaction={transaction}/>
+            return <Transaction key={transaction.id}
+             handleDelete={handleDelete}
+              count={count++}
+               transaction={transaction}/>
           })}
         </tbody>
       </table>

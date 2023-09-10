@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 
-function Transaction({ transaction }) {
+function Transaction({ transaction, handleDelete, count }) {
 
     const {id, date, description, category, amount} = transaction;
 
   return (
 
-    <tr id={id}>
-      <td>{id}</td>
+    <tr>
+      <td>{count}</td>
       <td>{date}</td>
       <td>{description}</td>
       <td>{category}</td>
       <td>{amount}</td>
-      <td><button id={id}>Delete</button></td>
+      <td><button id={id} onClick={handleDelete}>Delete</button></td>
     </tr>
     
   )
