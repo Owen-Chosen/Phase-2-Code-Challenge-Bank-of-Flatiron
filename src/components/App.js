@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DisplayTransactions from "./DisplayTransactions";
 import TransactionForm from "./TransactionForm";
+import FilterTransaction from "./FilterTransaction";
 
 
 function App() {
@@ -16,9 +17,14 @@ function App() {
 
   return (
     <main>
-      <TransactionForm hasChange={hasChange} setHasChange={setHasChange}/>
+      <TransactionForm hasChange={hasChange}
+       setHasChange={setHasChange}/>
+      <FilterTransaction hasChange={hasChange}
+       setHasChange={setHasChange}
+        setTransactions={setTransactions}/>
       <DisplayTransactions transactions={transactions}
-       hasChange={hasChange} setHasChange={setHasChange}/>
+       hasChange={hasChange}
+        setHasChange={setHasChange}/>
     </main>
   );
 }

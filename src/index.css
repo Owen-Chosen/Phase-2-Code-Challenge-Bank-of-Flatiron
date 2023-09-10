@@ -19,9 +19,16 @@ input {
   border: 1px solid black;
 }
 
+#filter-button {
+  height: 35px;
+  width: 70px;
+  letter-spacing: 2px;
+}
+
 #submit {
   height: 35px;
 }
+
 
 h3 {
   margin-top: 20px;
@@ -33,12 +40,13 @@ form {
   margin: auto;
   margin-top: 10px;
   margin-left: 500px;
+  margin-bottom: 50px;
   width: 1000px;
 }
 
 table {
   margin: auto;
-  margin-top: 45px;
+  margin-top: 10px;
   text-align: center;
   border: .5px solid black;
   border-radius: 5px;

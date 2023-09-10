@@ -17,7 +17,7 @@ function TransactionForm({ hasChange, setHasChange }) {
 
     function handleSubmit (event) {
         event.preventDefault();
-        if (formData.amount !== 0 || formData.description.includes("Enter")) {
+        if (formData.amount !== 0) {
             fetch ("http://localhost:3000/transactions", {
             method: 'POST',
             headers: {
@@ -26,7 +26,7 @@ function TransactionForm({ hasChange, setHasChange }) {
             },
             body: JSON.stringify(formData)
         })
-        .then (res => res.json())
+        .then(res => res.json())
         .then(data => {
             setFormData({
                 date: "Enter Date..",
@@ -42,7 +42,7 @@ function TransactionForm({ hasChange, setHasChange }) {
   return (
     <div>
         <h3>Enter New Transaction</h3>
-        <form onSubmit={handleSubmit}>
+        <form id="form-for-new" onSubmit={handleSubmit}>
             <input
              type='text'
               name='date'

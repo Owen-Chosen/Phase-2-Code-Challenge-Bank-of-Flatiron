@@ -18,12 +18,13 @@ function DisplayTransactions({transactions, hasChange, setHasChange}) {
     })
 
 }    
+
   return (
     <div>
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>S/N</th>
             <th>DATE</th>
             <th>DESCRIPTION</th>
             <th>CATEGORY</th>
