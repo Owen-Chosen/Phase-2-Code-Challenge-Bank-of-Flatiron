@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function FilterTransaction({ setTransactions }) {
 
-    const [inputText,setInputText] = useState("Search..")
+    const [inputText,setInputText] = useState("Search..");
 
     function filterByDescription (event) {
         event.preventDefault();
